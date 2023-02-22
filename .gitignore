@@ -1,0 +1,22 @@
+# Node modules
+node_modules/
+
+# Puppeteer output
+puppeteer/
+
+# Jest screenshots
+screenshots/
+
+# Jest output
+coverage/
+test-results/
+
+# Logs
+logs/
+
+# Environment variables
+.env
+
+# Editor and IDE files
+.vscode/
+.idea/
