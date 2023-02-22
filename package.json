@@ -1,0 +1,16 @@
+{
+  "name": "idpay-ux-testing",
+  "version": "0.0.1",
+  "scripts": {
+    "test": "node_modules/.bin/jest"
+  },
+  "devDependencies": {
+    "jest": "^=29.4.3",
+    "jest-junit": "^15.0.0",
+    "jest-puppeteer": "^=7.0.1",
+    "puppeteer": "^=19.7.2"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  }
+}
