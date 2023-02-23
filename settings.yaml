@@ -1,5 +1,5 @@
 SECRET_PATH: "conf/.secrets.yaml"
-# Default environment. Overridden if specifies through environment variable.
+# Default environment. Overridden if specified through environment variable.
 TARGET_ENV: "uat"
 API_KEY_HEADER: "Ocp-Apim-Subscription-Key"
 BASE_URL: "http://quotes.toscrape.com/"
