@@ -1,0 +1,44 @@
+trigger:
+  - main
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+  # Node.js version: 19.7.0
+  nodeVersion: '19.7.0'
+
+  # Folder name of this sub-repository
+  working-dir: '.'
+
+  # Project root folder
+  projectRoot: $(System.DefaultWorkingDirectory)/$(working-dir)
+
+steps:
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '$(nodeVersion)'
+    displayName: 'Install Node.js'
+
+  - script: |
+      npm install
+    workingDirectory: $(projectRoot)
+    displayName: 'npm install'
+
+  - task: DownloadSecureFile@1
+    name: idpay_secrets
+    displayName: 'Download IDPay secrets'
+    inputs:
+      secureFile: '.secrets.yaml'
+
+  - script: |
+      SECRET_PATH=$(idpay_secrets.secureFilePath) npm test
+    workingDirectory: $(projectRoot)
+    displayName: 'Run tests with Jest-Puppeteer'
+
+  - task: PublishTestResults@2
+    inputs:
+      testResultsFormat: 'JUnit'
+      testResultsFiles: '__tests__/reports/junit.xml'
+      testRunTitle: 'Jest-Puppeteer Results'
+      failTaskOnFailedTests: true
