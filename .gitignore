@@ -9,7 +9,7 @@ screenshots/
 
 # Jest output
 coverage/
-test-results/
+__tests__/reports
 
 # Logs
 logs/

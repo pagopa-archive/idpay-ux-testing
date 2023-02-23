@@ -3,6 +3,6 @@ module.exports = {
     testTimeout: 60000,
     reporters: [
         "default",
-        ["jest-junit", { outputDirectory: "test-results/jest" }],
+        ["jest-junit", { outputDirectory: "__tests__/reports" }],
     ]
 }
