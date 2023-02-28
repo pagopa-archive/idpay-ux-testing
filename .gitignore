@@ -23,3 +23,5 @@ logs/
 
 # Ignore secrets file
 conf/.secrets.yaml
+
+.DS_STORE
